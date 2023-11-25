@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome To Puja Kerang Ajaib</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .content-f {
+            margin-bottom: 20px;
+            color: #333;
+            align-self: center;
+            text-align: center;
+        }
+
+        .img img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .content-f a.button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 18px;
+            text-decoration: none;
+            color: #fff;
+            background-color: #3498db;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .content-f a.button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <div class="content-f">
+        <h1>Selamat Datang {{ nama }} <br> Anda berhasil masuk ke Portal Puja Kerang Ajaib 🐚</h1>
+        <a href="{{ url_for('get_pesan_ajaib') }}" class="button">Lihat Pesan Puja Kerang Ajaib</a>
+    </div>
+    <div class="img">
+        <img src="{{ url_for('static', filename='imgpuja.png') }}" alt="Image">
+    </div>
+</body>
+</html>

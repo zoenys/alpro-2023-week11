@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Puja Kerang Ajaib</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="msg">
+            <p>{{ random_msg|default('') }}</p>
+        </div>
+        <div class="img">
+            {% for img_url in image_urls %}
+                <img src="{{ url_for('static', filename=img_url) }}" alt="Random Image">
+            {% endfor %}
+        </div>
+        <h3>Click Button Untuk Melihat Pesan Lain Dari Kerang Ajaib</h2>
+        <button onclick="reloadPage()">CLICK</button>
+        <br>
+        
+    <script>
+        function reloadPage() {
+            window.location.href = window.location.href;
+        }
+    </script>
+</body>
+<footer>
+    <h4>Tambahakn nama Anda pada pesan Kerang Ajaib dengan cara ketik '/namaAnda' pada <strong>endpoint</strong></h4>
+</footer>
+</html>
